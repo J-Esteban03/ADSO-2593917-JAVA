@@ -11,6 +11,7 @@ public class Ejer6{
         int mes=0;
         int pago=0;
         int mes2=0;
+
         while(x < n){
 
             System.out.println("Ingrese la opcion deseada:");
@@ -21,8 +22,6 @@ public class Ejer6{
             System.out.println("");
             System.out.println("ingrese alguna de las opciones");
             opcion = entrada.nextInt();
-
-       
 
             if (opcion == 1){
                 System.out.println("Seleccione el mes;");
@@ -53,9 +52,7 @@ public class Ejer6{
             if (opcion == 2){
                  for(int j=0;j<meses.length;j++){   
                     System.out.println("mes "+j+":"+meses[j]);
-                        
-                           
-                        
+
                 }
                 x=2;
             }
@@ -65,7 +62,7 @@ public class Ejer6{
                 mes2= entrada.nextInt();
                 for(int j=0;j<meses.length;j++){
                     if(mes2==j){
-                    System.out.println("Este es el pago: "+meses[j]);
+                        System.out.println("Este es el pago: "+meses[j]);
                            
                     }
                 }
@@ -75,6 +72,7 @@ public class Ejer6{
             if (opcion==4){
                 n=0;
             }
+            
         }
     }
 }

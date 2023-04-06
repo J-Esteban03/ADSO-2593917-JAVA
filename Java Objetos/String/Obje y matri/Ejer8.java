@@ -29,6 +29,7 @@ public class Ejer8{
         }
         
         System.out.println("");
+        
         System.out.print("Numero del arreglo: ");
         for(int i=0;i<original.length;i++){
             System.out.print(original[i]);
