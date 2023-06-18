@@ -232,14 +232,14 @@ public class ModificarProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String codigo = campoId.getText();
-        Producto temporal = this.ventanaMenu.database.buscarProducto(codigo);
+        String id = campoId.getText();
+        Producto temporal = this.ventanaMenu.database.buscarProducto(Integer.valueOf(id));
         
         if (temporal != null) {
             habilitarCampo(campoNombre);
             habilitarCampo(campoPrecio);
             campoNombre.setText(temporal.getNombre());
-            campoPrecio.setText(temporal.getPrecio());
+            campoPrecio.setText(String.valueOf(temporal.getPrecio()));
             campoNombre.requestFocus();
             btnModificar.setEnabled(true);
         }else{
@@ -254,13 +254,13 @@ public class ModificarProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        String codigo = campoId.getText();
+        String id = campoId.getText();
         String nombre = campoNombre.getText();
         String precio = campoPrecio.getText();
-        Producto temporal = new Producto(codigo, nombre, precio );
+        Producto temporal = new Producto (Integer.valueOf(id), nombre, Integer.valueOf(precio));
         
-        if (!codigo.equals("") && !nombre.equals("") && !precio.equals("")) {
-            boolean proceso  = this.ventanaMenu.database.editarProducto(temporal);
+        if (!id.equals("") && !nombre.equals("") && !precio.equals("")) {
+            boolean proceso  = this.ventanaMenu.database.editarProductos(temporal);
             
             Alert alerta = new Alert("EXITO", "Datos editados correctamente.", "success");
         }else{

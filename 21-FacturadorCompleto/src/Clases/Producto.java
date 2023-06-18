@@ -2,21 +2,21 @@ package Clases;
 
 public class Producto {
     
-    private String id;
+    private int id;
     private String nombre;
-    private String precio;
+    private int precio;
 
-    public Producto(String id, String nombre, String precio) {
+    public Producto(int id, String nombre, int precio) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -28,11 +28,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
     

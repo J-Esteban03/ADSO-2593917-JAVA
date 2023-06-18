@@ -222,12 +222,13 @@ public class EliminarProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_campoCodigoActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String codigo = campoCodigo.getText();
-        Producto temporal = this.ventanaMenu.database.buscarProducto(codigo);
+        String id = campoCodigo.getText();
+        Producto temporal =  this.ventanaMenu.database.buscarProducto(Integer.valueOf(id));
+        
 
         if (temporal != null){
             campoNombre.setText(temporal.getNombre());
-            campoPrecio.setText(temporal.getPrecio());
+            campoPrecio.setText(String.valueOf(temporal.getPrecio()));
             
             campoNombre.requestFocus();
             btnEliminar.setEnabled(true);
@@ -270,7 +271,7 @@ public class EliminarProducto extends javax.swing.JFrame {
         String codigo = campoCodigo.getText();
         String nombre = campoNombre.getText();
         String precio = campoPrecio.getText();
-        Producto temporal = new Producto (codigo, nombre, precio);
+        Producto temporal = new Producto (Integer.valueOf(codigo), nombre, Integer.valueOf(precio));
 
         if (!codigo.equals("") && !nombre.equals("") && !precio.equals("") ) {
 
